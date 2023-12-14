@@ -197,7 +197,7 @@ class IncrementStore extends Store<IncrementState> {
 ```
 
 ### Update functions arguments
-Named updated functions can also receive arguments for even bigger flexibility.
+Named update functions can also receive arguments for even bigger flexibility.
 
 ```ts
 const multiply = (x: number): Update<IncrementState> = ({ value }) => ({ value: value * x });
