@@ -2,11 +2,13 @@
 
 ## Angular Model-View-Update architectural pattern
 
-Angular MVU is architectural pattern that is useful for building complex, efficient and reactive components and applications in Angular 2+.
+Angular MVU represents an architectural pattern tailored for the development of sophisticated, efficient, and reactive components and applications within the Angular 2+ framework.
 
-The ideas come from [the Elm architecture](https://guide.elm-lang.org/architecture/). Angular MVU applies Elm architecture concepts to Angular framework.
+Rooted in the foundational principles of [the Elm architecture](https://guide.elm-lang.org/architecture/), Angular MVU seamlessly integrates these concepts into the Angular framework, bringing forth a harmonious fusion of Elm's proven architectural philosophy and the robust capabilities of Angular.
 
 ## Core concepts
+
+Let's see how easily we can build component using core concepts of Angular MVU.
 
 ### Model
 
@@ -26,7 +28,7 @@ const INITIAL_STATE: IncrementState = {
 };
 ```
 
-Then, we define a store and pass the initial state.
+Then, we define a store and pass the initial state to it.
 
 ```ts
 @Injectable()
@@ -44,7 +46,7 @@ Now we are ready to display data from the store in a view.
 ```ts
 @Component({
   selector: 'app-increment',
-  template: './increment.component.html'
+  templateUrl: './increment.component.html'
 })
 export class IncrementComponent {
   readonly state$: Observable<IncrementState>;
@@ -65,7 +67,7 @@ export class IncrementComponent {
 
 We have Model and View. Now it's time to add an Update part.
 
-First we define updates by defining store methods which call internal `update` method expecting update function as an argument.
+First we define updates by defining store methods which call internal store `update` method expecting update function as an argument.
 
 State should be always immutable, so update function is a pure function, which creates a new state object based on a previous one.
 
@@ -86,7 +88,7 @@ class IncrementStore extends Store<IncrementState> {
 }
 ```
 
-Now, connect it with the view:
+Now, connect store methods with the view.
 
 ```ts
 @Component({
@@ -167,9 +169,9 @@ class IncrementStore extends Store<IncrementState> {
 ### Update functions piping
 It is possible to pipe update functions.
 
-This results in code being easier to understand, better reusability and composability.
+This results in code being easier to understand, more reusable and composable.
 
-Please note that UI repaint is triggered only after all the updates are applied, so it is very fast and guarantees state consistency.
+Please note that UI repaint is triggered only after all the updates are applied, so it is very fast and guarantees state consistency across repaints.
 
 ```ts
 const increment = (): Update<IncrementState> = ({ value }) => ({ value: value + 1 });
@@ -286,7 +288,7 @@ class ArticlesStore extends Store<ArticlesState> {
 
 @Component({
   selector: 'app-articles',
-  template: './articles.component.html'
+  templateUrl: './articles.component.html'
 })
 class ArticlesComponent {
   readonly state$: Observable<ArticlesState>;
