@@ -41,7 +41,7 @@ class IncrementStore extends Store<IncrementState> {
 
 ### View
 
-Now we are ready to display data from the store in a view.
+Now we are ready to display the data from the store in a view.
 
 ```ts
 @Component({
@@ -67,7 +67,7 @@ export class IncrementComponent {
 
 We have Model and View. Now it's time to add an Update part.
 
-First we define updates by defining store methods which call internal store `update` method expecting update function as an argument.
+First, define updates by adding store methods, which call internal store `update` method, which expects update function as an argument.
 
 State should be always immutable, so update function is a pure function, which creates a new state object based on a previous one.
 
@@ -88,7 +88,7 @@ class IncrementStore extends Store<IncrementState> {
 }
 ```
 
-Now, connect store methods with the view.
+Now, connect store methods to the view.
 
 ```ts
 @Component({
@@ -120,9 +120,10 @@ export class IncrementComponent {
 </ng-container>
 ```
 
-Done! This few steps allowed us for implementing MVU architecture pattern in Angular.
+Done! This few steps allowed us for implementing MVU architectural pattern in Angular.
 
 ## Why use this architecture?
+
 
 - **Complete Static Typing**
   - This architecture is fully statically typed, enabling seamless and confident code refactoring. Leverage the power of static typing for easy and secure code modifications.  
@@ -132,6 +133,8 @@ Done! This few steps allowed us for implementing MVU architecture pattern in Ang
   - Harness the full potential of RxJS, treating Observables as first-class citizens. This pattern simplifies the handling of side effects, facilitating the creation of rich and reactive UIs.
 - **Reduced Code Verbosity**
   - Experience less code verbosity compared to alternative solutions such as Redux, NgRx or Akita. Streamline your development process while maintaining code clarity.
+- **Improved Angular performance**
+  - Use optimal change detection strategy with no additional effort. Make Angular apps run significantly faster and consume less energy on mobile.
 - **Enhanced Unit Testability**
   - Ensure comprehensive unit test coverage effortlessly. The architecture is designed to make every aspect of your application code easily testable.
 - **Functional Programming Practices**
@@ -144,6 +147,8 @@ Done! This few steps allowed us for implementing MVU architecture pattern in Ang
   - Scale your projects effectively. This architecture is suitable for building entire applications or individual components, offering flexibility in implementation.
 - **Battle-Tested in Real-Life Applications**
   - Benefit from a comprehensive and battle-tested solution. This architecture has successfully powered the development of real-life applications, including large forms, interactive tables or hi-res image viewers.
+- **Well-suited for multi actors scenarios**
+  - Dealing with multiple actors or data producers like API polling, web workers or web sockets? MVU architecture works very well in all of these scenarios.
 
 ## Advanced concepts
 
