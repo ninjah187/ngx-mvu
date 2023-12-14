@@ -6,6 +6,17 @@ Angular MVU represents an architectural pattern tailored for the development of 
 
 Rooted in the foundational principles of [the Elm architecture](https://guide.elm-lang.org/architecture/), Angular MVU seamlessly integrates these concepts into the Angular framework, bringing forth a harmonious fusion of Elm's proven architectural philosophy and the robust capabilities of Angular.
 
+## Installation
+
+Installation is very easy. All that is needed is installing a package.
+
+```
+npm install --save ngx-mvu
+```
+```
+yarn add ngx-mvu
+```
+
 ## Core concepts
 
 Let's see how easily we can build component using core concepts of Angular MVU.
@@ -123,7 +134,6 @@ export class IncrementComponent {
 Done! This few steps allowed us for implementing MVU architectural pattern in Angular.
 
 ## Why use this architecture?
-
 
 - **Complete Static Typing**
   - This architecture is fully statically typed, enabling seamless and confident code refactoring. Leverage the power of static typing for easy and secure code modifications.  
