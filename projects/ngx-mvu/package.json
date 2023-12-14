@@ -1,6 +1,18 @@
 {
   "name": "ngx-mvu",
-  "version": "0.0.1",
+  "version": "0.0.2",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ninjah187/ngx-mvu.git"
+  },
+  "author": "ninjah187",
+  "license": "MIT",
+  "keywords": [
+    "angular",
+    "architecture",
+    "data store",
+    "store"
+  ],
   "peerDependencies": {
     "@angular/common": "^17.0.0",
     "@angular/core": "^17.0.0"
